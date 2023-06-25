@@ -1,0 +1,92 @@
+{
+  "categories": [
+    {
+      "name": "Women Dress",
+      "subCategory": [
+        "Wedding & Events",
+        "Tops & Sets",
+        "Watches"
+      ]
+    },
+    {
+      "name": "Men Clothing & Fashion",
+      "subCategory": [
+        "Men Clothing subCategory 1",
+        "Men Clothing subCategory 2",
+        "Men Clothing subCategory 3",
+        "Men Clothing subCategory 4",
+        "Men Clothing subCategory 5"
+      ]
+    },
+    {
+      "name": "Computer & Accessories",
+      "subCategory": [
+        "Computer & Accessories subCategory 1",
+        "Computer & Accessories subCategory 2",
+        "Computer & Accessories subCategory 3",
+        "Computer & Accessories subCategory 4",
+        "Computer & Accessories subCategory 5"
+      ]
+    },
+    {
+      "name": "Automobile",
+      "subCategory": [
+        "Automobile subCategory 1",
+        "Automobile subCategory 2",
+        "Automobile subCategory 3",
+        "Automobile subCategory 4",
+        "Automobile subCategory 5"
+      ]
+    },
+    {
+      "name": "Kid-Toys",
+      "subCategory": [
+        "Kid-Toys subCategory 1",
+        "Kid-Toys subCategory 2",
+        "Kid-Toys subCategory 3",
+        "Kid-Toys subCategory 4",
+        "Kid-Toys subCategory 5"
+      ]
+    },
+    {
+      "name": "Sports",
+      "subCategory": [
+        "Sports subCategory 1",
+        "Sports subCategory 2",
+        "Sports subCategory 3",
+        "Sports subCategory 4",
+        "Sports subCategory 5"
+      ]
+    },
+    {
+      "name": "Jewelery",
+      "subCategory": [
+        "Jewelery subCategory 1",
+        "Jewelery subCategory 2",
+        "Jewelery subCategory 3",
+        "Jewelery subCategory 4",
+        "Jewelery subCategory 5"
+      ]
+    },
+    {
+      "name": "CellPhone & Tablets",
+      "subCategory": [
+        "CellPhone & Tablets subCategory 1",
+        "CellPhone & Tablets subCategory 2",
+        "CellPhone & Tablets subCategory 3",
+        "CellPhone & Tablets subCategory 4",
+        "CellPhone & Tablets subCategory 5"
+      ]
+    },
+    {
+      "name": "Furniture",
+      "subCategory": [
+        "Furniture subCategory 1",
+        "Furniture subCategory 2",
+        "Furniture subCategory 3",
+        "Furniture subCategory 4",
+        "Furniture subCategory 5"
+      ]
+    }
+  ]
+}

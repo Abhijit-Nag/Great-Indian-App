@@ -13,7 +13,7 @@ Widget homeButtons(String text, IconData icon, onPress, double fontSize){
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10)
+              borderRadius: BorderRadius.circular(2)
           ),
 
           // height: 30,

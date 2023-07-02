@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       color: Colors.white.withOpacity(0.88),
       width: context.screenWidth,
       height: context.screenHeight,
@@ -65,9 +65,9 @@ class Home extends StatelessWidget {
                               fit: BoxFit.fill,
                             )
                                 .box
-                                .rounded
+                                .roundedSM
                                 .clip(Clip.antiAlias)
-                                .margin(EdgeInsets.symmetric(horizontal: 8))
+                                .margin(const EdgeInsets.symmetric(horizontal: 8))
                                 .make(),
                           );
                         }),
@@ -79,10 +79,10 @@ class Home extends StatelessWidget {
                       children: [
                         homeButtons("Today's Deal", Icons.checklist_rounded,
                             () {
-                          print("Today's Deal");
+                          // print("Today's Deal");
                         }, 15),
                         homeButtons("Flash Sale", Icons.flash_on_outlined, () {
-                          print("Flash Sale");
+                          // print("Flash Sale");
                         }, 15),
                       ],
                     ),
@@ -101,9 +101,9 @@ class Home extends StatelessWidget {
                               fit: BoxFit.fill,
                             )
                                 .box
-                                .rounded
+                                .roundedSM
                                 .clip(Clip.antiAlias)
-                                .margin(EdgeInsets.symmetric(horizontal: 8))
+                                .margin(const EdgeInsets.symmetric(horizontal: 8))
                                 .make(),
                           );
                         }),
@@ -134,9 +134,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(
-                      height: 10,
-                    ),
+                    10.heightBox,
 
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -160,44 +158,51 @@ class Home extends StatelessWidget {
                     //  all products section
 
                     20.heightBox,
-                    
+
                     //Featured Products section
-                    
-                    
+
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
                       child: Row(
-                        children: List.generate(featuredProductTitle.length, (index){
+                        children:
+                            List.generate(featuredProductTitle.length, (index) {
                           return Container(
                             height: 250,
                             width: 250,
-                            margin: EdgeInsets.all(8),
-                            padding: EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.white
-                            ),
+                            margin: const EdgeInsets.all(8),
+                            padding: const EdgeInsets.only(bottom: 10),
+                            decoration: const BoxDecoration(color: Colors.white),
                             child: Column(
                               children: [
-                            Image(image: AssetImage(featuredProductImage[index]),
-                            height: 150,
-                            width: 150,),
-                            Center(
-                            child: Container(
-                              child: Text(featuredProductTitle[index],
-                              style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              ),
-                              textAlign: TextAlign.justify,),
-                              padding: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
-                            ),
-                            ),
-                            Text(featuredProductPrice[index], style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green
-                            )),
+                                Image(
+                                  image:
+                                      AssetImage(featuredProductImage[index]),
+                                  height: 150,
+                                  width: 150,
+                                ),
+                                Center(
+                                  child: Container(
+                                    padding: const EdgeInsets.only(
+                                        left: 30,
+                                        right: 30,
+                                        top: 10,
+                                        bottom: 10),
+                                    child: Text(
+                                      featuredProductTitle[index],
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                  ),
+                                ),
+                                Text(featuredProductPrice[index],
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green)),
                               ],
                             ),
                           );
@@ -218,50 +223,58 @@ class Home extends StatelessWidget {
                               fit: BoxFit.fill,
                             )
                                 .box
-                                .rounded
+                                .roundedSM
                                 .clip(Clip.antiAlias)
-                                .margin(EdgeInsets.symmetric(horizontal: 8))
+                                .margin(const EdgeInsets.symmetric(horizontal: 8))
                                 .make(),
                           );
                         }),
 
                     20.heightBox,
                     Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
+                      margin: const EdgeInsets.only(left: 10, right: 10),
                       child: GridView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: 6,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 8,
                                   mainAxisSpacing: 8,
                                   mainAxisExtent: 300),
                           itemBuilder: (context, index) {
                             return Container(
-                              padding: EdgeInsets.only(bottom: 20, left: 10, right: 10),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10)),
+                              padding: const EdgeInsets.only(
+                                  bottom: 20, left: 10, right: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(3)),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Image(image: AssetImage(featuredProductImage[index]),
-                                  fit: BoxFit.fill,),
-                                  Center(
-                                    child: Text(featuredProductTitle[index],
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500
-                                    ),),
+                                  Image(
+                                    image:
+                                        AssetImage(featuredProductImage[index]),
+                                    fit: BoxFit.fill,
                                   ),
-                                  Text(featuredProductPrice[index], style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green
-                                  ),)
+                                  Center(
+                                    child: Text(
+                                      featuredProductTitle[index],
+                                      style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  Text(
+                                    featuredProductPrice[index],
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green),
+                                  )
                                 ],
                               ),
                             );

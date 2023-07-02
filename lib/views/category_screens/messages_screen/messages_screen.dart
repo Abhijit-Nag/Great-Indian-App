@@ -27,37 +27,46 @@ class MessagesScreen extends StatelessWidget {
               return Center(child: Text(snapshot.error.toString()),);
             }
             if(snapshot.data!.docs.isEmpty){
-              return const Center(child: Text('No orders yet'),);
+              return const Center(child: Text('No Messages yet'),);
             }
             var data = snapshot.data!.docs;
+            print('messages data. ${data[0]['created_on']}');
+            int count=0;
             return ListView.builder(
               itemCount: data.length,
                 itemBuilder: (context, index){
-                return Container(
-                  margin: const EdgeInsets.all(8.0),
-                  color: Colors.white,
-                  child: ListTile(
-                    leading: const CircleAvatar(backgroundColor: Colors.green, child: Icon(Icons.person, color: Colors.white,),),
-                    title: Text(data[index]['friend_name']),
-                    subtitle: Text(data[index]['last_msg']),
-                    trailing: SizedBox(
-                      width: 80,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('${ intl.DateFormat("h:mma").format(data[index]['created_on'].toDate())}'),
-                          const Icon(Icons.arrow_forward_ios)
-                        ],
+                if(data[index]['created_on']!=null){
+                  return Container(
+                    margin: const EdgeInsets.all(8.0),
+                    color: Colors.white,
+                    child: ListTile(
+                      leading: const CircleAvatar(backgroundColor: Colors.green, child: Icon(Icons.person, color: Colors.white,),),
+                      title: Text(data[index]['friend_name']),
+                      subtitle: Text(data[index]['last_msg']),
+                      trailing: SizedBox(
+                        width: 80,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text( intl.DateFormat("h:mma").format(data[index]['created_on'].toDate())),
+                            const Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ).onTap(() {
-                  Get.to(()=>ChatScreen(),
-                  arguments: [
-                    data[index]['friend_name'],
-                    data[index]['toId']
-                  ]);
-                });
+                  ).onTap(() {
+                    Get.to(()=>ChatScreen(),
+                        arguments: [
+                          data[index]['friend_name'],
+                          data[index]['toId']
+                        ]);
+                  });
+                }else{
+                  count++;
+                  if(count==data.length){
+                    return const Center(child:Text('No Messages Yet')).marginOnly(top: 15);
+                  }
+                }
                 });
           }),
     );
